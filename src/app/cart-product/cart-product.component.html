@@ -1,0 +1,19 @@
+<li class="list-group-item clearfix" *ngIf="product">
+    <div class="row">
+    <div class="col-8">{{product.name}} - 
+      <small>{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}} </small> </div>
+    
+    <div class="col-4">
+        <div class="input-group input-group-sm">
+            <div class="input-group-prepend">
+                <button class="btn btn-info" type="button" (click)="toggleMore()">+</button>
+            </div>
+            <input type="text" class="form-control text-center" [(ngModel)]="product.num" >
+            <div class="input-group-append">
+                <button class="btn btn-danger" type="button" (click)="toggleLess()">-</button>
+            </div>
+        </div>
+    </div>
+    </div>
+  </li>
+  

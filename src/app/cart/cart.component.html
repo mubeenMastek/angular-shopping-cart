@@ -1,0 +1,19 @@
+<div class="card">
+    <div class="card-header">
+        Shopping Cart  ({{calcTotal()}})
+        <button class="btn btn-danger btn-sm" >Empty Cart</button>
+        <small class="pull-right">Total items {{products.length}}</small>
+    </div>
+
+    <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <app-cart-product *ngFor="let product of products" [product]="product"  (productRemoved)="removeProduct($event)"></app-cart-product>
+          </ul>
+    </div>
+
+    <div class="card-footer">
+        Total:{{total.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}
+       </div>
+  </div>
+
+

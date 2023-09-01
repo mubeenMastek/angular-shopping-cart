@@ -1,0 +1,16 @@
+<h1>Products</h1>
+<app-tags (filterProducts)="filterProductsByTagName($event)"></app-tags>
+<div class="row" data-masonry='{"percentPosition": true }'>
+    <div class="col-3" *ngFor="let product of filteredProductsList">
+        <div class="card">
+            <img src="{{product.image}}" class="card-img-top" alt="">    
+            <div class="card-body">    
+              <div class="pro-name">{{product.name}}</div>
+              <div><small class="text-muted">{{product.tags}}</small></div>
+              <div>{{product.price.toLocaleString('en-US', {style: 'currency', currency: 'USD'})}}</div>
+              <button class="btn btn-primary btn-sm"  (click)="addProductToCart(product)">Add to cart</button>
+            </div>
+          </div>
+    </div>   
+</div>
+

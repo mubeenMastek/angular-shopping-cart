@@ -1,0 +1,4 @@
+<div *ngIf="tags" class="mb-3">
+    <a *ngFor="let tag of tags" (click)="tagClick(tag.name)" class="btn btn-secondary mx-1"
+    style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;">{{tag.name}} {{tag.count}}</a>
+</div>
